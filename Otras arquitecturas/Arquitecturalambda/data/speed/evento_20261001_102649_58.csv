@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:44 UTC,view,1002544,2053013555631882655,electronics.smartphone,apple,464.13,532085144,77ae546a-542b-414c-a01b-c5ceca7e99cf

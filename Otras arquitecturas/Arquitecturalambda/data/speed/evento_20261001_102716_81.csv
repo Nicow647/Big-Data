@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:01:07 UTC,view,27700113,2053013560086233771,construction.tools.pump,leo,48.9,515630204,f9cc0313-5572-4894-a4eb-45d855f064cc

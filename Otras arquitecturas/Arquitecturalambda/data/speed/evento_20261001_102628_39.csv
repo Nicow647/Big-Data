@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:31 UTC,view,3900746,2053013552326770905,appliances.environment.water_heater,haier,102.38,555444559,98b88fa0-d8fa-4b9d-8a71-3dd403afab85

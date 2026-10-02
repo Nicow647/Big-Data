@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:50 UTC,view,1307135,2053013558920217191,computers.notebook,hp,320.35,542378517,244570b9-ebb4-4d4a-b63a-653225d975d5

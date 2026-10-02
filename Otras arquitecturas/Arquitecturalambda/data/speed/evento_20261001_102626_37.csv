@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:28 UTC,view,28714755,2053013565228450757,apparel.shoes,respect,51.22,555447570,99877fbe-d5a8-475e-a662-66bc9d29b6f8

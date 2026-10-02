@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:16 UTC,view,13500240,2053013557099889147,furniture.bedroom.bed,brw,93.18,555446365,7f0062d8-ead0-4e0a-96f6-43a0b79a2fc4

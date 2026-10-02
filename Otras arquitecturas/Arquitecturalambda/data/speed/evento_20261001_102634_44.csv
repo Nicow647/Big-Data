@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:35 UTC,view,3701244,2053013565983425517,appliances.environment.vacuum,elenberg,33.44,515535834,d90a6f2f-0d0f-47cf-9fe9-62db93dffdb9

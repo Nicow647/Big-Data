@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:33 UTC,view,28717908,2053013565782098913,apparel.shoes,burgerschuhe,102.45,513798668,2034798f-43f2-8bcb-b169-c5f04a7a5a4f

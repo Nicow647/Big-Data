@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:36 UTC,view,3600575,2053013563810775923,appliances.kitchen.washer,hotpoint-ariston,275.37,554754045,bd0302ef-c5ca-4b6a-b916-95cc2840c72c

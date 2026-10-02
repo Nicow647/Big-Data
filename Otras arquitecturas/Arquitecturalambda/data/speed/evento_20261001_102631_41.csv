@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:33 UTC,view,2700239,2053013563911439225,appliances.kitchen.refrigerators,atlant,283.12,521242564,f102dd9b-1cbc-4271-b1f8-a34548d02ec3

@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:35 UTC,view,4300070,2053013552385491165,,timberk,38.59,544648245,bb8e28c8-d11f-428a-95e7-056e974fe835

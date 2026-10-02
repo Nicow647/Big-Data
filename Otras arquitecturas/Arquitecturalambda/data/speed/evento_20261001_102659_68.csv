@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:56 UTC,view,4804295,2053013554658804075,electronics.audio.headphone,xiaomi,23.13,541366014,6d8ce6fb-2953-4e95-96fe-b40f1ec50ba8

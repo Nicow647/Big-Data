@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:01:17 UTC,view,1004856,2053013555631882655,electronics.smartphone,samsung,130.76,515757896,4938043e-e50f-44ad-944d-958d04df62d6

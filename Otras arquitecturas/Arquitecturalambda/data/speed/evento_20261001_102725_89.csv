@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:01:15 UTC,view,1801555,2053013554415534427,electronics.video.tv,lg,462.25,537918940,406c46ed-90a4-4787-a43b-59a410c1a5fb

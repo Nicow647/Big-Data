@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:01:00 UTC,view,4300262,2053013552385491165,,vitek,72.0,523239174,464a96b0-03ee-420d-92fb-643469379b89

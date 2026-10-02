@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:31 UTC,view,28718079,2053013565362668491,apparel.shoes.keds,respect,66.67,545323115,75fb5d0c-e907-4293-9c87-2419c2a7709d

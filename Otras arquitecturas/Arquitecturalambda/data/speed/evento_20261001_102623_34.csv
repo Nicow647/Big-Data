@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:27 UTC,view,10800001,2053013554994348409,,maxwell,32.92,539194858,5fe9d0a0-0de6-47de-a55a-eae9f89475cd

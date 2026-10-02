@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:28 UTC,view,28600026,2053013558282682943,,,399.73,555447224,889da81c-2cfc-4df6-a038-ed436c79ee80

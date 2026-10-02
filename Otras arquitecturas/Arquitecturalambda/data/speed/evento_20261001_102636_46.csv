@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:35 UTC,view,3601505,2053013563810775923,appliances.kitchen.washer,samsung,463.15,526631741,5ec9bd77-beef-443e-b987-62ffb55b8132

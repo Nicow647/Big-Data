@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:46 UTC,view,4100126,2053013561218695907,,sony,326.62,519885473,b70cb218-db90-4011-b582-0bd237109df1

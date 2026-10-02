@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:36 UTC,view,2900475,2053013554776244595,appliances.kitchen.microwave,gorenje,295.99,533078094,6eaaf55a-7bbe-4b3d-95a8-f3b3e31c39c8

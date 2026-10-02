@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:01:21 UTC,view,28708392,2053013565069067197,apparel.shoes.keds,strobbs,31.92,555447570,99877fbe-d5a8-475e-a662-66bc9d29b6f8

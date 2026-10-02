@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:42 UTC,view,26400291,2053013563651392361,,lucente,188.94,551331813,19ded3e3-823b-4f51-ad00-ab84f364f5ef

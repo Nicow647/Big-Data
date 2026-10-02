@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:01:25 UTC,view,3900990,2053013552326770905,appliances.environment.water_heater,ariston,122.18,554748717,5459fbe4-2aa5-42b9-9064-05f853218fe0

@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:37 UTC,view,1701111,2053013553031414015,computers.peripherals.monitor,acer,514.79,547028884,3ea7c620-a8d7-45c5-9ced-2e9874e2f549

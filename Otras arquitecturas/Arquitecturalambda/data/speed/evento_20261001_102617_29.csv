@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:25 UTC,view,27500014,2053013554692358509,,redmond,37.98,555217733,74d40a28-41f9-4325-bbae-b179bd2c0a38

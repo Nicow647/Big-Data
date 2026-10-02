@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:01:14 UTC,view,32601078,2053013566587404305,,okuma,32.18,513696314,1c073854-b838-4cf9-bfe9-b30b742b1751

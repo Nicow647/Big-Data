@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:01:02 UTC,view,10900026,2053013555069845885,appliances.kitchen.mixer,panasonic,40.8,514080443,b65b8d08-14af-496c-94cb-44886c6a96d5

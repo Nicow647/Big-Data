@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:58 UTC,view,4802639,2053013554658804075,electronics.audio.headphone,sony,218.77,514808401,1877639d-46a4-44f8-bae9-a14456952240

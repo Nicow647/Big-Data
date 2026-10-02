@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:30 UTC,view,3701388,2053013565983425517,appliances.environment.vacuum,dauscher,33.21,515342595,0e30e1c0-4d3e-4e1a-90e3-ab93b5f5c1a2

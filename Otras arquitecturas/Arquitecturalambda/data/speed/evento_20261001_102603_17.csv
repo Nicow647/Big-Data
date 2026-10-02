@@ -1,0 +1,2 @@
+event_time,event_type,product_id,category_id,category_code,brand,price,user_id,user_session
+2019-10-01 00:00:18 UTC,view,1801995,2053013554415534427,electronics.video.tv,haier,193.03,537192226,e3151795-c355-4efa-acf6-e1fe1bebeee5
