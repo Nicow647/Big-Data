@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 
 # Rutas dentro del directorio actual D:\juand\UNIVERSIDAD\BIGDATA
-BASE_DIR = r"D:\juand\UNIVERSIDAD\BIGDATA"
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 # CORRECCIÓN: Se agrega "DataLake" a la ruta para que coincida con tu árbol de archivos
 RAW_DATA_DIR = os.path.join(BASE_DIR, "DataLake", "data", "raw")
 

@@ -43,15 +43,15 @@ def stream_ecommerce_data(source_path, output_dir):
         print("\n[INFO] Simulación de streaming parada por el usuario.")
 
 if __name__ == "__main__":
-    # 1. Ajustamos BASE_DIR exacto donde estás trabajando
-    BASE_DIR = r"D:\juand\UNIVERSIDAD\BIGDATA\DataLake\data"
-    
-    # 2. El directorio speed quedará dentro de esta carpeta
+
+    BASE_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "DataLake")
+    )
+
     SPEED_DATA_DIR = os.path.join(BASE_DIR, "speed")
+
     setup_directories(SPEED_DATA_DIR)
-    
-    # 3. El archivo origen está en esta misma carpeta
+
     source_file = os.path.join(BASE_DIR, "ecommerce.csv")
-    
-    # 4. Lanzamos el streaming
+
     stream_ecommerce_data(source_file, SPEED_DATA_DIR)

@@ -13,18 +13,27 @@ import os
 # 1. RUTAS Y CONFIGURACIÓN DEL ENTORNO
 # Definimos la carpeta exclusiva del Data Warehouse para mantener todo ordenado.
 # ------------------------------------------------------------------------------
-BASE_DIR = r"D:\juand\UNIVERSIDAD\BIGDATA\DataWarehouse"
+# Ruta raíz del proyecto Big-Data-main
+PROJECT_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..")
+)
 
-# Archivo origen de extracción (CSV)
-CSV_PATH = os.path.join(BASE_DIR, "ecommerce.csv")
+# Archivo CSV original
+CSV_PATH = os.path.join(PROJECT_DIR, "DataLake", "ecommerce.csv")
 
-# Aseguramos que la carpeta 'data' exista antes de crear la base de datos
+# Carpeta del Data Warehouse
+BASE_DIR = os.path.join(
+    PROJECT_DIR, "Otras arquitecturas", "DataWarehouse"
+)
+
+# Carpeta donde se guardará la BD
 DATA_DIR = os.path.join(BASE_DIR, "data")
+
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
     print(f"[OK] Directorio creado para la BD: {DATA_DIR}")
 
-# Ruta final del archivo de la Base de Datos SQLite (Staging)
+# Base de datos SQLite
 DB_PATH = os.path.join(DATA_DIR, "dw_staging.db")
 
 
