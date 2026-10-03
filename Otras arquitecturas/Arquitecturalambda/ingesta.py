@@ -6,7 +6,9 @@ from datetime import datetime
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Carpeta donde llegan los eventos
-SPEED_DATA_DIR = os.path.join(BASE_DIR, "data", "speed")
+SPEED_DATA_DIR = os.path.abspath(
+    os.path.join(BASE_DIR, "..", "..", "DataLake", "speed")
+)
 
 # Zona Raw del DataLake
 RAW_DATA_DIR = os.path.abspath(
@@ -52,10 +54,7 @@ def fetch_ecommerce_data(source_dir, output_path):
     # Guardar en Raw
     df_final.to_csv(output_path, index=False)
 
-    print(
-        f"[OK] Se combinaron {len(df_final)} eventos "
-        f"desde la Zona Speed."
-    )
+    print(f"[OK] Se combinaron {len(df_final)} eventos " f"desde la Zona Speed.")
 
     print(f"[OK] Archivo guardado correctamente en: {output_path}")
 
@@ -68,14 +67,8 @@ if __name__ == "__main__":
 
     raw_filename = f"raw_ecommerce_{timestamp}.csv"
 
-    destination_path = os.path.join(
-        RAW_DATA_DIR,
-        raw_filename
-    )
+    destination_path = os.path.join(RAW_DATA_DIR, raw_filename)
 
-    fetch_ecommerce_data(
-        SPEED_DATA_DIR,
-        destination_path
-    )
+    fetch_ecommerce_data(SPEED_DATA_DIR, destination_path)
 
     print("[ÉXITO] Ingesta Batch completada desde la Zona Speed.")
