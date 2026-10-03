@@ -58,8 +58,7 @@ if __name__ == "__main__":
         print("[EXITO] Limpieza y Construcción de Zona Preparada finalizadas correctamente.")
         # Leer el Parquet generado
         print("Vista de parquet creado.")
-        ruta_parquet = os.path.join(PREPARED_DATA_DIR,nombre_archivo_base)
-        df_leido = spark.read.parquet(ruta_parquet)
+        df_leido = spark.read.parquet(ruta_salida_parquet)
         # Mostrar las primeras 10 filas sin truncar el texto
         df_leido.show(10, truncate=False)
         # Ver el esquema generado
