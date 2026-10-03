@@ -9,6 +9,8 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATALAKE_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 # las rutas exactas definidas por el directorio del DataLake
 RAW_DATA_DIR = os.path.join(DATALAKE_DIR, "data", "raw")
+# Directorio para la zona preparada (silver)
+PREPARED_DATA_DIR = os.path.join(DATALAKE_DIR, "data", "prepared")
 
 def limpiar_datos_ecommerce(df):
     # Eliminar registros duplicados
@@ -41,10 +43,24 @@ if __name__ == "__main__":
         df_crudo = spark.read.csv(archivo_crudo, header=True, inferSchema= True)
         print("[INFO] Aplicando transformaciones...")
         df_procesado = limpiar_datos_ecommerce(df_crudo)
-        
         print("Esquema de datos corregido")
         df_procesado.printSchema()
-        print("Muestra de datos limpios")
-        df_procesado.show(5)
-        print(f"Total de registro tras la limpieza: {df_procesado.count()}")
-        print("[EXITO] Prueba de limpieza finalizada")
+        print(f"Total de registros tras la limpieza: {df_procesado.count()}")
+        
+        # Se crea el directorio de la zona preparada si no existe
+        os.makedirs(PREPARED_DATA_DIR, exist_ok=True)
+        # Genera el nombre de la carpeta y se envía a la zona preparada (en .parquet)
+        nombre_archivo_base = os.path.basename(archivo_crudo).replace(".csv", ".parquet")
+        ruta_salida_parquet = os.path.join(PREPARED_DATA_DIR, nombre_archivo_base)
+        print(f"[INFO] Guardando datos en formato Parquet en: {ruta_salida_parquet}")
+        # Escribe el DataFrame procesado en formato Parquet y usamos overwrite para reemplazar los datos si el archivo ya existe
+        df_procesado.write.mode("overwrite").parquet(ruta_salida_parquet)
+        print("[EXITO] Limpieza y Construcción de Zona Preparada finalizadas correctamente.")
+        # Leer el Parquet generado
+        print("Vista de parquet creado.")
+        ruta_parquet = os.path.join(PREPARED_DATA_DIR,nombre_archivo_base)
+        df_leido = spark.read.parquet(ruta_parquet)
+        # Mostrar las primeras 10 filas sin truncar el texto
+        df_leido.show(10, truncate=False)
+        # Ver el esquema generado
+        df_leido.printSchema()
