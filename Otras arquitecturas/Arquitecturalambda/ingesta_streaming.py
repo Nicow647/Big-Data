@@ -43,11 +43,9 @@ def stream_ecommerce_data(source_path, output_dir):
 
 if __name__ == "__main__":
 
-    BASE_DIR = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "..", "..", "DataLake")
-    )
+    BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-    SPEED_DATA_DIR = os.path.join(BASE_DIR, "speed")
+    SPEED_DATA_DIR = os.path.join(BASE_DIR, "data", "speed")
 
     setup_directories(SPEED_DATA_DIR)
 

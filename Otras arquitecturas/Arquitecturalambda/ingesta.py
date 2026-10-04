@@ -6,14 +6,10 @@ from datetime import datetime
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Carpeta donde llegan los eventos
-SPEED_DATA_DIR = os.path.abspath(
-    os.path.join(BASE_DIR, "..", "..", "DataLake", "speed")
-)
+SPEED_DATA_DIR = os.path.join(BASE_DIR, "data", "speed")
 
 # Zona Raw del DataLake
-RAW_DATA_DIR = os.path.abspath(
-    os.path.join(BASE_DIR, "..", "..", "DataLake", "data", "raw")
-)
+RAW_DATA_DIR = os.path.join(BASE_DIR, "data", "raw")
 
 
 def setup_directories(target_dir):
