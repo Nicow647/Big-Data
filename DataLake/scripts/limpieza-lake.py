@@ -66,8 +66,11 @@ if __name__ == "__main__":
         # Leer el Parquet generado
         print("Vista de parquet creado.")
         df_leido = spark.read.parquet(ruta_salida_parquet)
-        
+
         # Mostrar las primeras 10 filas sin truncar el texto
         df_leido.show(10, truncate=False)
         # Ver el esquema generado
         df_leido.printSchema()
+    
+    # Liberar recursos del clúster local
+    spark.stop()

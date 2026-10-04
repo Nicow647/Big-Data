@@ -61,3 +61,15 @@ if __name__ == "__main__":
         # Guardar usando Parquet y sobrescribe si ya existe
         df_procesado.write.mode("overwrite").parquet(ruta_salida_parquet)
         print("[ÉXITO] Procesamiento Batch finalizado. Capa lista para Serving.")
+        
+        # Leer el Parquet generado
+        print("Vista de parquet creado.")
+        df_leido = spark.read.parquet(ruta_salida_parquet)
+        
+        # Mostrar las primeras 10 filas sin truncar el texto
+        df_leido.show(10, truncate=False)
+        # Ver el esquema generado
+        df_leido.printSchema()
+    
+    # Liberar recursos del clúster local
+    spark.stop()
