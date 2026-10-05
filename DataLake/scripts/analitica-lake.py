@@ -7,12 +7,15 @@ from pyspark.sql.window import Window
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+#Detección agnóstica de la raíz del proyecto para evitar fallos por rutas absolutas
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATALAKE_DIR = SCRIPT_DIR if os.path.exists(os.path.join(SCRIPT_DIR, "data")) else os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+# Zona Silver (datos curados/preparados por limpieza-lake.py en formato Parquet)
 PREPARED_DATA_DIR = os.path.join(DATALAKE_DIR, "data", "prepared")
-# Ruta Gold 
+# Ruta Gold (persistencia final de métricas agregadas y tablas dimensionales)
 GOLD_DATA_DIR = os.path.join(DATALAKE_DIR, "data", "gold")
 
+#Se instancia una sesión Spark ajustada al hardware para maximizar el paralelismo local
 spark = (
     SparkSession.builder
     .appName("Lakehouse_Analytics_Gold")
@@ -21,12 +24,14 @@ spark = (
     .config("spark.sql.shuffle.partitions", "4")
     .getOrCreate()
 )
+# Silenciar logs verbosos de Hadoop/Spark para mantener limpia la consola analítica
 spark.sparkContext.setLogLevel("ERROR")
 
 print("\n" + "="*75)
 print("     FASE ANALÍTICA DATA LAKEHOUSE (ZONA GOLD / SERVING LAYER)     ")
 print("="*75)
 
+# Búsqueda determinística de la partición Parquet más reciente creada por la fase Silver
 patron = os.path.join(PREPARED_DATA_DIR, "*.parquet")
 carpetas_parquet = glob.glob(patron)
 
@@ -35,10 +40,14 @@ if not carpetas_parquet:
     spark.stop()
     sys.exit(1)
 
+# Selección automática del archivo generado más reciente según timestamp del SO
 tabla_parquet = max(carpetas_parquet, key=os.path.getctime)
 print(f"[INFO] Leyendo tabla Parquet desde: {tabla_parquet}")
 
+# Lectura columnar distribuida del archivo Parquet (optimiza I/O frente a CSV plano)
 df = spark.read.parquet(tabla_parquet)
+
+# Extracción de la hora desde 'event_time' para habilitar segmentación cronológica
 df = df.withColumn("hour", F.hour(F.col("event_time")))
 
 print(f"[OK] Carga finalizada. Total registros: {df.count():,}\n")
@@ -156,9 +165,11 @@ ax2.set_title("Efectividad de Conversión: Carritos vs Compras", fontsize=12, fo
 ax2.set_xlabel("Marca")
 ax2.set_ylabel("Cantidad de Eventos")
 
+# Ajuste de distribución visual y persistencia en alta resolución
 plt.tight_layout()
 output_chart = os.path.join(DATALAKE_DIR, "reporte_analitico_lakehouse.png")
 plt.savefig(output_chart, dpi=300)
 print(f"[OK] Gráfico mejorado guardado en: {output_chart}")
 
+# Cierre determinístico de la JVM y retorno de descriptores de memoria al sistema operativo
 spark.stop()
