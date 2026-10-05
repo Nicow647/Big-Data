@@ -10,6 +10,8 @@ import seaborn as sns
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATALAKE_DIR = SCRIPT_DIR if os.path.exists(os.path.join(SCRIPT_DIR, "data")) else os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 PREPARED_DATA_DIR = os.path.join(DATALAKE_DIR, "data", "prepared")
+# Ruta Gold 
+GOLD_DATA_DIR = os.path.join(DATALAKE_DIR, "data", "gold")
 
 spark = (
     SparkSession.builder
@@ -108,6 +110,18 @@ session_friction = df.groupBy("user_session").agg(
  .orderBy(F.desc("total_carritos"))
 session_friction.show(10, truncate=False)
 
+# Creación de directorio gold
+print("\n[INFO] Guardando vistas agregadas en la Zona Gold (/data/gold)...")
+os.makedirs(GOLD_DATA_DIR, exist_ok=True)
+
+funnel_metricas.write.mode("overwrite").parquet(os.path.join(GOLD_DATA_DIR, "gold_funnel_conversion"))
+top_productos.write.mode("overwrite").parquet(os.path.join(GOLD_DATA_DIR, "gold_top_productos"))
+rfm_df.write.mode("overwrite").parquet(os.path.join(GOLD_DATA_DIR, "gold_clientes_rfm"))
+hourly_df.write.mode("overwrite").parquet(os.path.join(GOLD_DATA_DIR, "gold_trafico_horario"))
+session_friction.write.mode("overwrite").parquet(os.path.join(GOLD_DATA_DIR, "gold_friccion_sesiones"))
+
+print("[OK] Tablas analíticas almacenadas exitosamente en la capa Gold.")
+
 # Exportación gráfica
 print("\n[INFO] Generando visualización gráfica para evidencias...")
 
@@ -146,3 +160,5 @@ plt.tight_layout()
 output_chart = os.path.join(DATALAKE_DIR, "reporte_analitico_lakehouse.png")
 plt.savefig(output_chart, dpi=300)
 print(f"[OK] Gráfico mejorado guardado en: {output_chart}")
+
+spark.stop()
